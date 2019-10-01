@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  title: Test
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /leaves:
+    get:
+      summary: leaves
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../common/models/leaves.v1.json
+              examples:
+                example-1:
+                  value:
+                    id: '17'
+                    type: '0100'
+                    status: requested
+                    start: '2019-05-16T00:00'
+                    end: '2019-05-31T00:00'
+                    days: 11
+      requestBody: {}
+components:
+  schemas: {}
+  securitySchemes: {}

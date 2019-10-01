@@ -1,0 +1,55 @@
+{
+  "title": "Leaves",
+  "type": "object",
+  "x-examples": {
+    "example-1": {
+      "value": {
+        "id": "17",
+        "type": "0100",
+        "status": "requested",
+        "start": "2019-05-16T00:00",
+        "end": "2019-05-31T00:00",
+        "days": 11
+      }
+    }
+  },
+  "description": "",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "start": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2019-05-16T00:00",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+    },
+    "end": {
+      "type": "string",
+      "format": "date",
+      "example": "2019-05-16T00:00",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+    },
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "declined",
+        "pending",
+        "approved"
+      ]
+    },
+    "days": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "start",
+    "end",
+    "type"
+  ]
+}
